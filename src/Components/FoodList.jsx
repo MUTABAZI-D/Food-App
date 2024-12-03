@@ -2,7 +2,7 @@ import FoodItem from "./FoodItem";
 
 export default function FoodList({ foodData, setFoodId }) {
   return (
-    <div>
+    <div className="col-span-1">
       {foodData.map((food) => (
         <FoodItem key={food.id} food={food} setFoodId={setFoodId}></FoodItem>
       ))}

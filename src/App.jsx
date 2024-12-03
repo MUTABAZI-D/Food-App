@@ -3,8 +3,6 @@ import Search from "./Components/Search";
 import FoodList from "./Components/FoodList";
 import Nav from "./Components/Nav";
 import Styles from "./app.module.css";
-import Container from "./Components/Container";
-import InnerContainer from "./Components/InnerContainer";
 import FoodDetails from "./Components/FoodDetails";
 function App() {
   const [foodData, setFoodData] = useState([]);
@@ -13,14 +11,10 @@ function App() {
     <>
       <Nav></Nav>
       <Search foodData={foodData} setFoodData={setFoodData}></Search>
-      <Container>
-        <InnerContainer>
-          <FoodList setFoodId={setFoodId} foodData={foodData}></FoodList>
-        </InnerContainer>
-        <InnerContainer>
-          <FoodDetails foodId={foodId}></FoodDetails>
-        </InnerContainer>
-      </Container>
+      <div className="grid grid-cols-3 md:grid-cols-2 md:mx-5 md:gap-5">
+        <FoodList setFoodId={setFoodId} foodData={foodData} />
+        <FoodDetails foodId={foodId} />
+      </div>
     </>
   );
 }
