@@ -1,4 +1,5 @@
 import Styles from "./fooditem.module.css";
+import { motion } from "motion/react";
 export default function FoodItem({ food, setFoodId }) {
   const handleClick = () => {
     setFoodId(food.id);
@@ -12,7 +13,8 @@ export default function FoodItem({ food, setFoodId }) {
         </p>
       </div>
       <div className={Styles.buttonContainer}>
-        <button
+        <motion.button
+          whileTap={{ scale: 1.1, opacity: 0.5 }}
           onClick={handleClick}
           style={{
             backgroundColor: "#29bb89",
@@ -23,7 +25,7 @@ export default function FoodItem({ food, setFoodId }) {
           className="md:p-3 md:py-2 px-1 py-1 text-xs md:text-sm font-semibold md:px-2 mt-2 rounded-sm md:rounded-md"
         >
           View Recipe
-        </button>
+        </motion.button>
       </div>
     </div>
   );

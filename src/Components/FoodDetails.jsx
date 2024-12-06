@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Styles from "./fooddetails.module.css";
 import ItemList from "./ItemList";
+import { motion } from "motion/react";
 
 export default function FoodDetails({ foodId }) {
   const [food, setFood] = useState({});
@@ -18,7 +19,12 @@ export default function FoodDetails({ foodId }) {
     fetchFood();
   }, [foodId]);
   return (
-    <div className=" md:p-5 p-4 shadow-xl rounded-lg text-[#393e46] col-span-2 md:col-span-1 md:max-w-full max-w-[220px] ml-10 mr-4 self-start">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className=" md:p-5 p-4 shadow-xl rounded-lg text-[#393e46] col-span-2 md:col-span-1 md:max-w-full max-w-[220px] ml-10 mr-4 self-start"
+    >
       <h1 className="text-xl md:text-2xl mb-2">{food.title}</h1>
       <img className={Styles.recipeImage} src={food.image} alt="Food image" />
       <div className={Styles.recipeDetails}>
@@ -54,6 +60,6 @@ export default function FoodDetails({ foodId }) {
           )}
         </ol>
       </div>
-    </div>
+    </motion.div>
   );
 }
