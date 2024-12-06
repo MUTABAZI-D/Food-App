@@ -18,7 +18,7 @@ export default function FoodDetails({ foodId }) {
     fetchFood();
   }, [foodId]);
   return (
-    <div className=" md:p-5 p-4 shadow-xl rounded-lg text-[#393e46] col-span-2 md:col-span-1 md:max-w-full max-w-[220px] ml-14 self-start">
+    <div className=" md:p-5 p-4 shadow-xl rounded-lg text-[#393e46] col-span-2 md:col-span-1 md:max-w-full max-w-[220px] ml-10 self-start">
       <h1 className="text-xl md:text-2xl mb-2">{food.title}</h1>
       <img className={Styles.recipeImage} src={food.image} alt="Food image" />
       <div className={Styles.recipeDetails}>
