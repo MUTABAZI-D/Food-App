@@ -4,7 +4,7 @@ export default function FoodItem({ food, setFoodId }) {
     setFoodId(food.id);
   };
   return (
-    <div className="rounded-lg overflow-hidden my-5 md:mx-5 mx-4 shadow-xl md:w-[300px] w-[170px]">
+    <div className="rounded-lg overflow-hidden my-5 md:mx-5 mx-4 shadow-xl md:w-[300px] w-[150px]">
       <img className={Styles.itemImage} src={food.image} alt="food image" />
       <div className={Styles.itemContent}>
         <p className="md:text-lg text-sm font-semibold text-[#393e46]">
