@@ -11,7 +11,7 @@ function App() {
     <div>
       <Nav />
       <Search foodData={foodData} setFoodData={setFoodData} />
-      <div className="grid grid-cols-3 sm:grid-cols-2 sm:mx-5 sm:gap-3 md:gap-5">
+      <div className="grid grid-cols-3 sm:grid-cols-2 sm:mx-5 sm:gap-3 md:gap-5 mb-5">
         <FoodList setFoodId={setFoodId} foodData={foodData} />
         <FoodDetails foodId={foodId} />
       </div>
