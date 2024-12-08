@@ -5,10 +5,10 @@ export default function FoodItem({ food, setFoodId }) {
     setFoodId(food.id);
   };
   return (
-    <div className="rounded-lg overflow-hidden my-5 md:mx-5 mx-4 shadow-xl md:w-[300px] w-[120px]">
+    <div className="rounded-lg overflow-hidden my-5 sm:mx-5 mx-4 shadow-xl sm:w-[200px] md:w-[300px] w-[120px]">
       <img className={Styles.itemImage} src={food.image} alt="food image" />
       <div className={Styles.itemContent}>
-        <p className="md:text-lg text-xs font-semibold text-[#393e46]">
+        <p className="sm:text-lg text-xs font-semibold text-[#393e46]">
           {food.title}
         </p>
       </div>
@@ -22,7 +22,7 @@ export default function FoodItem({ food, setFoodId }) {
             color: "white",
             cursor: "pointer",
           }}
-          className="md:p-3 md:py-2 px-1 py-1 text-xs md:text-sm font-semibold md:px-2 mt-2 rounded-sm md:rounded-md"
+          className="sm:p-3 sm:py-2 px-1 py-1 text-xs sm:text-sm font-semibold sm:px-2 mt-2 rounded-sm sm:rounded-md"
         >
           View Recipe
         </motion.button>

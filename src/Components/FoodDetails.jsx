@@ -7,12 +7,11 @@ export default function FoodDetails({ foodId }) {
   const [food, setFood] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const URL = `https://api.spoonacular.com/recipes/${foodId}/information`;
-  const API_KEY = "dc6961c6dc1944f993ad1d5c3a05fa53";
+  const API_KEY = import.meta.env.VITE_API_KEY;
   useEffect(() => {
     async function fetchFood() {
       const response = await fetch(`${URL}?apiKey=${API_KEY}`);
       const data = await response.json();
-      console.log(data);
       setFood(data);
       setIsLoading(false);
     }
@@ -23,26 +22,26 @@ export default function FoodDetails({ foodId }) {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className=" md:p-5 p-4 shadow-xl rounded-lg text-[#393e46] col-span-2 md:col-span-1 md:max-w-full max-w-[220px] ml-10 mr-4 self-start"
+      className=" sm:p-3 md:p-5 p-4 shadow-xl rounded-lg text-[#393e46] col-span-2 sm:col-span-1  sm:max-w-full max-w-[220px] ml-10 mr-4 self-start"
     >
-      <h1 className="text-xl md:text-2xl mb-2">{food.title}</h1>
+      <h1 className="text-xl sm:text-2xl mb-2">{food.title}</h1>
       <img className={Styles.recipeImage} src={food.image} alt="Food image" />
       <div className={Styles.recipeDetails}>
-        <span className="text-xs md:text-lg font-semibold">
+        <span className="text-xs sm:text-sm md:text-lg font-semibold">
           &#x1F551; {food.readyInMinutes} Minutes
         </span>
-        <span className="text-xs md:text-lg font-semibold">
+        <span className="text-xs sm:text-sm md:text-lg font-semibold">
           &#x1F46A; Serves {food.servings}
         </span>
-        <span className="ml-1 md:ml-0 text-xs md:text-lg font-semibold">
+        <span className="ml-1 sm:ml-0 text-xs sm:text-sm md:text-lg font-semibold">
           {food.vegetarian ? `Vegetarian` : `  Non-vegetarian`}
         </span>
-        <span className="text-xs md:text-lg font-semibold">
+        <span className="text-xs sm:text-sm md:text-lg font-semibold">
           {food.vegan ? "Vegan" : ""}
         </span>
       </div>
       <div>
-        <span className="text-xs md:text-lg font-semibold">
+        <span className="text-xs sm:text-sm md:text-lg font-semibold">
           &#x24; {food.pricePerServing / 100} Per serving
         </span>
       </div>

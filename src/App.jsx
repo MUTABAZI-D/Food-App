@@ -9,9 +9,9 @@ function App() {
   const [foodId, setFoodId] = useState("656329");
   return (
     <div>
-      <Nav></Nav>
-      <Search foodData={foodData} setFoodData={setFoodData}></Search>
-      <div className="grid grid-cols-3 md:grid-cols-2 md:mx-5 md:gap-5">
+      <Nav />
+      <Search foodData={foodData} setFoodData={setFoodData} />
+      <div className="grid grid-cols-3 sm:grid-cols-2 sm:mx-5 sm:gap-3 md:gap-5">
         <FoodList setFoodId={setFoodId} foodData={foodData} />
         <FoodDetails foodId={foodId} />
       </div>
